@@ -31,13 +31,14 @@ button {
     padding: 3px;
     border: none;
     margin: 5px;
+    box-shadow: unset;
 }
 
 button:hover {
     background-color: rgb(37, 76, 154);
     cursor: pointer;
+    transition: 0.8s;
 }
-
 
 footer {
     text-align: center;
