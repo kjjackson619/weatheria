@@ -19,6 +19,32 @@ h1 {
 
 }
 
+input {
+    width: 15%;
+    margin: 5px;
+}
+
+button {
+    background-color: rgb(0, 208, 255);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    border: none;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgb(37, 76, 154);
+    cursor: pointer;
+}
+
+
 footer {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, rgb(0, 208, 255), rgb(37, 76, 154), rgb(5, 5, 169));
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
