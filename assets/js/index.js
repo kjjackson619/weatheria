@@ -1,29 +1,39 @@
-var inputEl = document.getElementById('#input').value;
+var cityEl = document.getElementById('#input');
+var buttonEl = document.getElementById('#button');
+
 
 // var localStorage = function () {
 
-// };
+// };x
 
-var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + "columbus" + "&appid=" + "2cf57f3bc628ca68fe4f4198c9697a35"
 
-var getWeather = function () {
+
+var getLocation = function () {
+
+    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + "columbus" + "&appid=" + "2cf57f3bc628ca68fe4f4198c9697a35"
+
     fetch(url).then(function (response) {
-        response.json().then(function (data) {
 
-            var card = document.createElement("div");
-            var cardInfo = card.textContent;
+        if (response.ok) {
+            console.log(response);
+            response.json().then(function (data) {
 
-            cardInfo.textContent = data.name;
+                console.log(data);
 
-            card.appendChild(cardInfo);
-        });
+            });
+        }
 
+        else {
+            alert("Invalid! Please enter your city!")
+        }
     });
 
 };
 
+buttonEl.addEventListener("click", getLocation());
 
 
-getWeather();
+
+
 
 
