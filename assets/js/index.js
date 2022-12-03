@@ -1,6 +1,6 @@
-var cityEl = document.getElementById('#input');
-var buttonEl = document.getElementById('#button');
-
+var input = document.querySelector("#input");
+var form = document.getElementById("#form");
+var key = '2cf57f3bc628ca68fe4f4198c9697a35'
 
 // var localStorage = function () {
 
@@ -10,7 +10,7 @@ var buttonEl = document.getElementById('#button');
 
 var getLocation = function () {
 
-    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + "columbus" + "&appid=" + "2cf57f3bc628ca68fe4f4198c9697a35"
+    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + `${input}` + "&appid=" + `${key}`;
 
     fetch(url).then(function (response) {
 
@@ -30,7 +30,11 @@ var getLocation = function () {
 
 };
 
-buttonEl.addEventListener("click", getLocation());
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    getLocation();
+});
 
 
 
